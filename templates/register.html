@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <style>
+        body{
+            background-color: orange;
+        }
+        button{
+            margin-left: 40px;
+            padding: 10px 10px;
+        }
+        .box{
+            border: solid 2px black;
+            background-color: blue;
+            height: 500px;
+            width: 500px;
+        }
+        
+
+    </style>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <h1>registration form</h1>
+<form method="POST" action="{%url 'signup' %}">
+    {% csrf_token %}
+      <div class="box">
+
+ <label for="firstname">first name</label> <br>
+ <input name="first_name" type="text" placeholder="enter first name"> <br> <br>
+
+ <label for="lastname">last name</label> <br>
+ <input name="last_name" type="text" placeholder="enter your last name"> <br> <br>
+
+ <label for="username">user name</label> <br>
+ <input name="username" type="text" placeholder="enter your user name"> <br> <br>
+
+ <label for="email">email</label> <br>
+ <input name="email" type="text" placeholder="email"> <br> <br>
+
+ <label for="password">password</label> <br>
+ <input name="password" type="password" placeholder="enter password"> <br> <br>
+
+ <label for="confirm password">confirm password</label> <br>
+ <input name="confirm_password" type="password" placeholder="confirm password"> <br> <br>
+ _
+ <button type="submit">sign up</button>
+
+ 
+</div>
+<p>Already have an account?<a href="{%url 'signin'%}">login</a></p>
+</form> 
+{% for message in messages %}
+<h1>{{message}}</h1> 
+{% endfor %} 
+</body>
+</html>

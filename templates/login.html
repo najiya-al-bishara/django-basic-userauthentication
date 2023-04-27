@@ -1,0 +1,60 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <style>
+        body{
+            background-color: pink;
+            font-family: calibri,Arial, Helvetica, sans-serif;
+        }
+        button{
+            width: 100%;
+            color: orange;
+            padding: 15px;
+            margin: 10px 0px;
+            border: none;
+            cursor: pointer;
+        }
+        form{
+            border: 3px solid #f1f1f1;
+        }
+        input{
+            width: 100%;
+            margin: 8px 0;
+            padding: 12px 20px;
+            display: inline-block;
+            border: 2px solid green;
+            box-sizing: border-box;
+        }
+        button:hover{
+            opacity: 0.7;
+        }
+        /* .container{
+            padding: 50px;
+            background-color: lightblue;
+        } */
+    </style>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+ <h1>student login form</h1> 
+ <form action="{%url 'signin'%}" method="POST">
+    {%csrf_token%}
+    
+    
+ <label>user name</label>
+ <input name="username" type="text" placeholder="enter user name"> <br> <br> <br>
+ <label>password</label>
+ <input name="password" type="password" placeholder="enter password"> <br>
+ <button type="submit">login</button>
+ </div>
+ <p>Dont have an account? please<a href="{%url 'signup'%}">register</a></p>
+ </form>
+ {%for message in messages%}
+<h1>{{message}}</h1> 
+{% endfor %}    
+</body>
+</html>
